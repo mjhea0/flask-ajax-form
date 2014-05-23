@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Flask - AJAX Form</title>
+</head>
+  <body>
+
+    <h1>Select Vehicle</h1>
+
+    <form action="/" method="POST">
+      {{ form.hidden_tag() }}
+      <ul>
+        <li>Make: {{ form.make(id="make_select") }}</li>
+        <li>Model: {{ form.model(id="model_select") }}</li>
+      </ul>
+      <button type="submit" id="submit-btn">Submit</button>
+    </form>
+
+    {% if chosen_make %}
+      <h2>You selected:</h2>
+        <ul>
+          <li>Make ID: {{ chosen_make }}</li>
+          <li>Model ID: {{ chosen_model }}</li>
+        </ul>
+    {% endif %}
+
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+  </body>
+</html>
