@@ -1,10 +1,10 @@
 import json
 from flask import Flask, request, render_template, make_response
 from form import TestForm
-from data import MAKE_LIST, MODEL_LIST
+from data import DEPARTMENT_LIST, EMPLOYEE_LIST
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = "illnevertell"
+app.config['SECRET_KEY'] = "my precious"
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -13,23 +13,23 @@ def index():
     Render form and handle form submission
     """
     form = TestForm(request.form)
-    form.make.choices = [('', 'Select a make')] + [
-        (x['make_id'], x['name']) for x in MAKE_LIST]
-    chosen_make = None
-    chosen_model = None
+    form.department.choices = [('', 'Select a department')] + [
+        (x['department_id'], x['name']) for x in DEPARTMENT_LIST]
+    chosen_department = None
+    chosen_employee = None
     
     return render_template('index.html', form=form)
 
 
-@app.route("/<int:make_id>/", methods=["GET"])
-def get_request(make_id):
+@app.route("/<int:department_id>/", methods=["GET"])
+def get_request(department_id):
     """
-    Handle GET request to - /<make_id>/
-    Return a list of tuples - (<model id>, <model name>)
+    Handle GET request to - /<department_id>/
+    Return a list of tuples - (<employee id>, <employee name>)
     """
     data = [
-        (x['model_id'], x['name']) for x in MODEL_LIST
-        if x['make_id'] == make_id]
+        (x['employee_id'], x['name']) for x in EMPLOYEE_LIST
+        if x['department_id'] == department_id]
     response = make_response(json.dumps(data))
     response.content_type = 'application/json'
     return response

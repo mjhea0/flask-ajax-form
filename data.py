@@ -1,19 +1,33 @@
-MAKE_LIST = (
-    {'make_id': 1, 'name': 'Honda'},
-    {'make_id': 2, 'name': 'Ford'},
-    {'make_id': 3, 'name': 'Toyota'},
+DEPARTMENT_LIST = (
+    {'department_id': 1, 'name': 'Accounting'},
+    {'department_id': 2, 'name': 'Sales'},
+    {'department_id': 3, 'name': 'Management'},
 )
-MODEL_LIST = (
-    {'model_id': 1, 'make_id': 1, 'name': 'Fit'},
-    {'model_id': 2, 'make_id': 1, 'name': 'Civic'},
-    {'model_id': 3, 'make_id': 1, 'name': 'Accord'},
-    {'model_id': 4, 'make_id': 1, 'name': 'Pilot'},
-    {'model_id': 5, 'make_id': 2, 'name': 'Mustang'},
-    {'model_id': 6, 'make_id': 2, 'name': 'F-150'},
-    {'model_id': 7, 'make_id': 2, 'name': 'Focus'},
-    {'model_id': 8, 'make_id': 2, 'name': 'Escape'},
-    {'model_id': 9, 'make_id': 3, 'name': 'Corolla'},
-    {'model_id': 10, 'make_id': 3, 'name': 'Camry'},
-    {'model_id': 11, 'make_id': 3, 'name': 'Prius'},
-    {'model_id': 12, 'make_id': 3, 'name': 'Tundra'},
+
+EMPLOYEE_LIST = (
+    {'employee_id': 1, 'department_id': 1, 'name': 'Kyra Davis'},
+    {'employee_id': 2, 'department_id': 1, 'name': 'Abigail Whitfield'},
+    {'employee_id': 3, 'department_id': 1, 'name': 'Maya Chase'},
+    {'employee_id': 4, 'department_id': 1, 'name': 'Lydia Hyde'},
+    {'employee_id': 5, 'department_id': 2, 'name': 'Wynne Erickson'},
+    {'employee_id': 6, 'department_id': 2, 'name': 'Candice Davidson'},
+    {'employee_id': 7, 'department_id': 2, 'name': 'Lawrence Roman'},
+    {'employee_id': 8, 'department_id': 2, 'name': 'Kameko Parker'},
+    {'employee_id': 9, 'department_id': 3, 'name': 'Jamal Everett'},
+    {'employee_id': 10, 'department_id': 3, 'name': 'Avram Burks'},
+    {'employee_id': 11, 'department_id': 3, 'name': 'Mia Mendez'},
+    {'employee_id': 12, 'department_id': 3, 'name': 'Ila Cantrell'},
 )
+
+
+
+
+
+
+
+
+
+
+
+
+

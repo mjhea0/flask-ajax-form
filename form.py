@@ -2,5 +2,5 @@ from flask.ext.wtf import Form, SelectField
 
 
 class TestForm(Form):
-    make = SelectField(u'', choices=())
-    model = SelectField(u'', choices=())
+    department = SelectField(u'', choices=())
+    employee = SelectField(u'', choices=())

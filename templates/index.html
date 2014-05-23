@@ -4,27 +4,19 @@
     <meta charset="utf-8">
     <title>Flask - AJAX Form</title>
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-    <style type="text/css">
-    .container {
-      padding-top: 50px;
-      max-width: 500px;
-    }
-     #model_select, #show_selection {
-      display: none;
-    }
-    </style>
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
   </head>
   <body>
 
     <div class="container">
-      <h1>Select a Vehicle</h1><br><br>
+      <h1>Select a department</h1><br><br>
 
-      <div id="make_selection">
+      <div id="department_selection">
         <form action="/" method="POST">
           {{ form.hidden_tag() }}
-          {{ form.make(id="make_select", class="form-control") }}
+          {{ form.department(id="department_select", class="form-control") }}
           <br>
-          {{ form.model(id="model_select", class="form-control") }}
+          {{ form.employee(id="employee_select", class="form-control") }}
           <br><br>
           <button type="button" class="btn btn-primary" id="submit-btn">Submit</button>
           <button type="button" class="btn btn-success" id="refresh-btn">Refresh</button>
@@ -38,18 +30,18 @@
         <table class="table">
           <thead>
             <tr>
-              <th>Make ID</th>
-              <th>Make</th>
-              <th>Model ID</th>
-              <th>Model</th>
+              <th>Department ID</th>
+              <th>Department</th>
+              <th>Employee ID</th>
+              <th>Employee</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><span id="chosen_make_id"></span></td>
-              <td><span id="chosen_make"></td>
-              <td><span id="chosen_model_id"></span></td>
-              <td><span id="chosen_model"></td>
+              <td><span id="chosen_department_id"></span></td>
+              <td><span id="chosen_department"></td>
+              <td><span id="chosen_employee_id"></span></td>
+              <td><span id="chosen_employee"></td>
             </tr>
           </tbody>
         </table>
