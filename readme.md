@@ -2,7 +2,7 @@
 
 ## Functionality
 
-User selects a vehicle make form a drop down list. Once selected, an AJAX request is sent with the model ID to the client-side to grab the appropriate vehicle models based on the make. The response sent back contains said models that populate a second drop down list.
+User selects a vehicle make from a drop down list. Once selected, an AJAX request is sent with the make ID to the client-side to grab the appropriate vehicle models based on the make. The response sent back contains said models that populate a second drop down list.
 
 ## Install/Run
 
