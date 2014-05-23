@@ -9,13 +9,14 @@ $(function() {
 
     get_request.done(function(data){
       console.log(data)
-      var option_list = data;
+      var option_list = [["", "Select a model"]].concat(data);
 
       $("#model_select").empty();
         for (var i = 0; i < option_list.length; i++) {
           $("#model_select").append(
             $("<option></option>").attr("value", option_list[i][0]).text(option_list[i][1]));
         }
+      $("#model_select").show();
     });
   });
 
@@ -23,7 +24,13 @@ $(function() {
     e.preventDefault()
     var make = $("#make_select").find(":selected").text();
     var model = $("#model_select").find(":selected").text();
-    console.log(make, model)
+    var make_id = $("#make_select").val();
+    var model_id = $("#model_select").val();
+    $("#chosen_make").html(make);
+    $("#chosen_model").html(model);
+    $("#selection").show();
+    console.log("Make ID ", make_id)
+    console.log("Model ID ", model_id)
   });
 
 });

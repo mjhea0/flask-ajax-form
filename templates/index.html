@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Flask - AJAX Form</title>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <title>Flask - AJAX Form</title>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+    .container {
+      padding-top: 50px;
+      max-width: 500px;
+    }
+     #model_select, #selection {
+      display: none;
+    }
+    </style>
+  </head>
   <body>
 
-    <h1>Select Vehicle</h1>
+    <div class="container">
+      <h1>Select a Vehicle</h1><br><br>
 
-    <form action="/" method="POST">
-      {{ form.hidden_tag() }}
-      <ul>
-        <li>Make: {{ form.make(id="make_select") }}</li>
-        <li>Model: {{ form.model(id="model_select") }}</li>
-      </ul>
-      <button type="submit" id="submit-btn">Submit</button>
-    </form>
+      <form action="/" method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.make(id="make_select", class="form-control") }}
+        <br>
+        {{ form.model(id="model_select", class="form-control") }}
+        <br><br>
+        <button type="submit" class="btn btn-default" id="submit-btn">Submit</button>
+      </form>
 
-    {% if chosen_make %}
-      <h2>You selected:</h2>
+      <br><br>
+      <div id="selection">
+        <h2>You selected:</h2>
         <ul>
-          <li>Make ID: {{ chosen_make }}</li>
-          <li>Model ID: {{ chosen_model }}</li>
+          <li>Make: <span id="chosen_make"></span></li>
+          <li>Model: <span id="chosen_model"></span></li>
         </ul>
-    {% endif %}
+      </div>
+
+    </div>
 
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script src="{{ url_for('static', filename='main.js') }}"></script>
   </body>
 </html>

@@ -13,7 +13,7 @@ def index():
     Render form and handle form submission
     """
     form = TestForm(request.form)
-    form.make.choices = [('', '--- Select One ---')] + [
+    form.make.choices = [('', 'Select a make')] + [
         (x['make_id'], x['name']) for x in MAKE_LIST]
     chosen_make = None
     chosen_model = None
@@ -22,7 +22,7 @@ def index():
 
 
 @app.route("/<int:make_id>/", methods=["GET"])
-def get(make_id):
+def get_request(make_id):
     """
     Handle GET request to /<make_id>/
     Return a list of 2-tuples (<model id>, <model name>)
