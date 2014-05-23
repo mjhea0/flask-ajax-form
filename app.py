@@ -24,8 +24,8 @@ def index():
 @app.route("/<int:make_id>/", methods=["GET"])
 def get_request(make_id):
     """
-    Handle GET request to /<make_id>/
-    Return a list of 2-tuples (<model id>, <model name>)
+    Handle GET request to - /<make_id>/
+    Return a list of tuples - (<model id>, <model name>)
     """
     data = [
         (x['model_id'], x['name']) for x in MODEL_LIST

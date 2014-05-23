@@ -9,7 +9,7 @@
       padding-top: 50px;
       max-width: 500px;
     }
-     #model_select, #selection {
+     #model_select, #show_selection {
       display: none;
     }
     </style>
@@ -19,22 +19,40 @@
     <div class="container">
       <h1>Select a Vehicle</h1><br><br>
 
-      <form action="/" method="POST">
-        {{ form.hidden_tag() }}
-        {{ form.make(id="make_select", class="form-control") }}
-        <br>
-        {{ form.model(id="model_select", class="form-control") }}
-        <br><br>
-        <button type="submit" class="btn btn-default" id="submit-btn">Submit</button>
-      </form>
+      <div id="make_selection">
+        <form action="/" method="POST">
+          {{ form.hidden_tag() }}
+          {{ form.make(id="make_select", class="form-control") }}
+          <br>
+          {{ form.model(id="model_select", class="form-control") }}
+          <br><br>
+          <button type="button" class="btn btn-primary" id="submit-btn">Submit</button>
+          <button type="button" class="btn btn-success" id="refresh-btn">Refresh</button>
+        </form>
+      </div>
 
       <br><br>
-      <div id="selection">
+
+      <div id="show_selection">
         <h2>You selected:</h2>
-        <ul>
-          <li>Make: <span id="chosen_make"></span></li>
-          <li>Model: <span id="chosen_model"></span></li>
-        </ul>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Make ID</th>
+              <th>Make</th>
+              <th>Model ID</th>
+              <th>Model</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span id="chosen_make_id"></span></td>
+              <td><span id="chosen_make"></td>
+              <td><span id="chosen_model_id"></span></td>
+              <td><span id="chosen_model"></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
     </div>

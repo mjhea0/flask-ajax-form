@@ -1,5 +1,8 @@
-Flask==0.9
-Flask-WTF==0.8.2
-Jinja2==2.6
-WTForms==1.0.2
-Werkzeug==0.8.3
+Flask==0.10.1
+Flask-WTF==0.9.5
+Jinja2==2.7.2
+MarkupSafe==0.23
+WTForms==2.0
+Werkzeug==0.9.4
+itsdangerous==0.24
+wsgiref==0.1.2
