@@ -2,7 +2,7 @@
 
 ## Functionality
 
-User selects a *department* from a drop down list. Once selected, an AJAX request is sent with the *department* ID to the server-side to grab the appropriate *employees* based on the *department*. The response sent back contains the *employees* that populate a second drop down list.
+User selects a *department* from a drop down list. Once selected, an AJAX request is sent with the *department_id* to the server-side to grab the appropriate *employee* and *employee_id* based on the *department_id*. The JSON data response sent back contains the *employee* that populates a second drop down list.
 
 ## Install/Run
 
