@@ -1,0 +1,11 @@
+{"departments": [
+    {"department_id":1, "name":"Accounting"}, 
+    {"department_id":2, "name":"Sales"}, 
+    {"department_id":3, "name":"Management"}
+    ]
+}
+
+
+
+
+

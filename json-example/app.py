@@ -1,7 +1,6 @@
 import json
 from flask import Flask, request, render_template, make_response
 from form import TestForm
-from data import DEPARTMENT_LIST, EMPLOYEE_LIST
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "my precious"
@@ -14,7 +13,7 @@ def index():
     """
     form = TestForm(request.form)
     form.department.choices = [('', 'Select a department')] + [
-        (x['department_id'], x['name']) for x in DEPARTMENT_LIST]
+        (x['department_id'], x['name']) for x in parse_json("departments.json")["departments"]]
     chosen_department = None
     chosen_employee = None
     
@@ -28,11 +27,17 @@ def get_request(department_id):
     Return a list of tuples - (<employee id>, <employee name>)
     """
     data = [
-        (x['employee_id'], x['name']) for x in EMPLOYEE_LIST
+        (x['employee_id'], x['name']) for x in parse_json("employees.json")["employees"]
         if x['department_id'] == department_id]
     response = make_response(json.dumps(data))
     response.content_type = 'application/json'
     return response
+
+
+def parse_json(json_file):
+    with open(json_file) as data_file:    
+        data = json.load(data_file)
+    return data
 
 
 if __name__ == "__main__":
