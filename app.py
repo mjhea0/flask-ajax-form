@@ -1,6 +1,6 @@
 import json
 from flask import Flask, request, render_template, make_response
-from forms import TestForm
+from form import TestForm
 from data import MAKE_LIST, MODEL_LIST
 
 app = Flask(__name__)
