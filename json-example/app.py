@@ -37,6 +37,7 @@ def get_request(department_id):
 def parse_json(json_file):
     with open(json_file) as data_file:    
         data = json.load(data_file)
+    print data
     return data
 
 

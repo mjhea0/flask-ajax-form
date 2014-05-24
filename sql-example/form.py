@@ -1,4 +1,5 @@
-from flask.ext.wtf import Form, SelectField
+from flask.ext.wtf import Form
+from wtforms import SelectField
 
 
 class TestForm(Form):
