@@ -1,4 +1,4 @@
-## Flask jQuery/AJAX form
+## Generate a dynamic form in Flask with AJAX
 
 ### Functionality
 
