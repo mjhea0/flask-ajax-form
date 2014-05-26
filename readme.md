@@ -9,13 +9,5 @@ User selects a *department* from a drop down list. Once selected, an AJAX reques
 1. Clone repo
 1. Activate vitrualenv
 1. Install requirements
-
-### Run JSON
-
-1. JSON example: `python json-example/app.py`
-
-### Run SQL
-
-1. Create database: `python sql-example/db_init.py`
-1. SQL example: `python sql-example/app.py`
-
+1. Create database: `python db_init.py` (if needed)
+1. Run

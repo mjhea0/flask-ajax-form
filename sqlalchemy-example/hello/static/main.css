@@ -1,0 +1,7 @@
+.container {
+  padding-top: 50px;
+  max-width: 500px;
+}
+ #employee_select, #show_selection {
+  display: none;
+}
