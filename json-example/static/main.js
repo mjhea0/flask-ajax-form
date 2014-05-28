@@ -15,7 +15,7 @@ $(function() {
     // send value via GET to URL /<department_id>
     var get_request = $.ajax({
       type: 'GET',
-      url: '/' + department_id + '/',
+      url: '/department/' + department_id + '/',
     });
 
     // handle response
