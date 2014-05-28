@@ -4,7 +4,7 @@ from form import TestForm
 from hello import app, db
 from models import Department, Employee
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/department", methods=["GET", "POST"])
 def index():
     """
     Render form and handle form submission
@@ -19,7 +19,7 @@ def index():
     return render_template('index.html', form=form)
 
 
-@app.route("/<int:department_id>/", methods=["GET"])
+@app.route("/department/<int:department_id>/", methods=["GET"])
 def get_request(department_id):
     """
     Handle GET request to - /<department_id>/
